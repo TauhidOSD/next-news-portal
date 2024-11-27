@@ -1,7 +1,20 @@
+"use client"
 import Link from "next/link"
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation-menu"
+import { Switch } from "@/components/ui/switch"
+import { Button } from "./ui/button"
+import { useState } from "react"
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+
 
 const Navbar = () => {
+
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const toggleMobileMenu = () => {
+  setIsMobileMenuOpen(!isMobileMenuOpen);
+}
+
+
   return (
     <header className="py-4 bg-white text-gray-900 shadow-md transition-colors duration-300">
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8  ">
@@ -30,16 +43,50 @@ const Navbar = () => {
                       </NavigationMenuLink>
 
                       </li>
+                      <li>
+                      <NavigationMenuLink href="/services/app" className="hover:text-gray-600">
+                       Mobile Apps
+                      </NavigationMenuLink>
+
+                      </li>
+                      <li>
+                      <NavigationMenuLink href="/services/seo" className="hover:text-gray-600">
+                        SEO
+                      </NavigationMenuLink>
+
+                      </li>
                   </ul>
                 </NavigationMenuLink>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
-
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/about" className="hover:text-gray-600">About</NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/contact" className="hover:text-gray-600">Contact</NavigationMenuLink>
+            </NavigationMenuItem>
 
           </NavigationMenuList>
         </NavigationMenu>
 
+        {/* color switcher and login btn */}
+        <div className="hidden lg:flex items-center space-x-4">
+          <div className="flex items-center">
+            <span className="mr-2">Dark Mode </span>
+            <Switch />
+          </div>
+          <Button variant="default" className="px-6">Login</Button>
+
+        </div>
+        {/* hamburger menu for mobile */}
+        <div className="lg:hidden">
+          <Button onClick={toggleMobileMenu}>
+            {
+             isMobileMenuOpen ? (<AiOutlineClose size={24} />) : (<AiOutlineMenu size={24}/>) 
+            }
+          </Button>
+        </div>
 
       </nav>
 
