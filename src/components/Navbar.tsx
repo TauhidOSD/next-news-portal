@@ -3,16 +3,14 @@ import Link from "next/link"
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation-menu"
 import { Switch } from "@/components/ui/switch"
 import { Button } from "./ui/button"
-import { useState } from "react"
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import MobileMenu from "./MobileMenu"
+import { usePathname } from "next/navigation"
+
 
 
 const Navbar = () => {
 
-const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-const toggleMobileMenu = () => {
-  setIsMobileMenuOpen(!isMobileMenuOpen);
-}
+  const pathname = usePathname()
 
 
   return (
@@ -28,7 +26,7 @@ const toggleMobileMenu = () => {
           <NavigationMenuList className="flex space-x-8">
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="/news" className="hover:text-gray-600">News</NavigationMenuLink>
+              <NavigationMenuLink href="/news" className={`${pathname === '/news' ? 'text-red-500 font-semibold' : ''} hover:text-gray-600"`}>News</NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
@@ -37,34 +35,34 @@ const toggleMobileMenu = () => {
               <NavigationMenuContent>
                 <NavigationMenuLink>
                   <ul className="text-gray-600 shadow-md rounded-md py-4 px-5 space-y-2">
-                      <li>
+                    <li>
                       <NavigationMenuLink href="/services/web-development" className="hover:text-gray-600">
-                       web Development
+                        web Development
                       </NavigationMenuLink>
 
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                       <NavigationMenuLink href="/services/app" className="hover:text-gray-600">
-                       Mobile Apps
+                        Mobile Apps
                       </NavigationMenuLink>
 
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                       <NavigationMenuLink href="/services/seo" className="hover:text-gray-600">
                         SEO
                       </NavigationMenuLink>
 
-                      </li>
+                    </li>
                   </ul>
                 </NavigationMenuLink>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="/about" className="hover:text-gray-600">About</NavigationMenuLink>
+              <NavigationMenuLink href="/about" className={`${pathname === '/about' ? 'text-red-500 font-semibold' : ''} hover:text-gray-600"`}>About</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/contact" className="hover:text-gray-600">Contact</NavigationMenuLink>
+              <NavigationMenuLink href="/contact" className={`${pathname === '/contact' ? 'text-red-500 font-semibold' : ''} hover:text-gray-600"`}>Contact</NavigationMenuLink>
             </NavigationMenuItem>
 
           </NavigationMenuList>
@@ -80,14 +78,8 @@ const toggleMobileMenu = () => {
 
         </div>
         {/* hamburger menu for mobile */}
-        <div className="lg:hidden">
-          <Button onClick={toggleMobileMenu}>
-            {
-             isMobileMenuOpen ? (<AiOutlineClose size={24} />) : (<AiOutlineMenu size={24}/>) 
-            }
-          </Button>
-        </div>
 
+        <MobileMenu />
       </nav>
 
     </header>
