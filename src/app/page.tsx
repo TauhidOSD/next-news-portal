@@ -1,5 +1,7 @@
 import Banner from "@/components/Banner";
+
 import NewsCard from "@/components/NewsCard";
+import NewsLetter from "@/components/NewsLetter";
 import { NewsItem } from "@/types/news";
 
 
@@ -13,6 +15,8 @@ export default async function Home() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      
       <Banner />
 
       <div className="my-12">
@@ -25,6 +29,7 @@ export default async function Home() {
           }
         </div>
       </div>
+      <NewsLetter/>
     </div>
   );
 }
