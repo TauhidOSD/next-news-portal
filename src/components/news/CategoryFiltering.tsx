@@ -11,7 +11,7 @@ interface CategoryFilterProps {
 const CategoryFiltering = ({ onCategoryChange }: CategoryFilterProps) => {
     const categories = ['all', 'tech', 'health', 'sports', 'business']
     return (
-        <div className='flex gap-2 items-center justify-center'>
+        <div className='flex gap-2 items-center justify-center  px-4'>
             <h3 className='font-bold text-lg flex-shrink-0'>Filter by category: </h3>
             <Select onValueChange={(value) => onCategoryChange(value === 'all' ? '' : value)}>
                 <SelectTrigger className="w-[180px] border rounded-md capitalize">

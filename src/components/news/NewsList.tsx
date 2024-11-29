@@ -4,6 +4,7 @@ import { NewsItem } from "@/types/news";
 import { useEffect, useState } from "react"
 import SearchBar from "./SearchBar";
 import CategoryFiltering from "./CategoryFiltering";
+import NewsCard from "../NewsCard";
 
 const NewsList = () => {
 
@@ -28,6 +29,15 @@ const NewsList = () => {
          <SearchBar onSearch= {setSearch}/>
         {/* category filtering */}
         <CategoryFiltering onCategoryChange={setCategory}/>
+       </div>
+       {/* present news */}
+
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-between">
+          {
+            news.map((item: NewsItem) => (
+              <NewsCard key={item?._id} item={item}/>
+            ))
+          }
        </div>
     </div>
   )
