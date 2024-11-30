@@ -10,6 +10,6 @@ export const fetchNews = async (category:string ="", search: string ="") => {
         return data;
     } catch (error) {
         console.error("Error fetching news data", error);
-        return []
+        return [];
     }
-}
+};

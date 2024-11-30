@@ -1,20 +1,20 @@
-"use client"
-import Link from "next/link"
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation-menu"
-import { Switch } from "@/components/ui/switch"
-import { Button } from "./ui/button"
-import MobileMenu from "./MobileMenu"
-import { usePathname } from "next/navigation"
-import { useContext } from "react"
-import { ThemeContext } from "./context/themeContext"
+"use client";
+import Link from "next/link";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation-menu";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "./ui/button";
+import MobileMenu from "./MobileMenu";
+import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import { ThemeContext } from "./context/themeContext";
 
 
 
 const Navbar = () => {
 
-  const pathname = usePathname()
+  const pathname = usePathname();
 
-  const {isDarkMode, toggleTheme} = useContext(ThemeContext)
+  const {isDarkMode, toggleTheme} = useContext(ThemeContext);
 
 
   return (
@@ -89,7 +89,7 @@ const Navbar = () => {
       </nav>
 
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

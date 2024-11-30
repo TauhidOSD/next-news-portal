@@ -1,4 +1,3 @@
-import React from 'react'
 import { Input } from '../ui/input';
 
 interface SearchBarProps {
@@ -15,7 +14,7 @@ const SearchBar = ({onSearch}: SearchBarProps) => {
         />
 
     </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;

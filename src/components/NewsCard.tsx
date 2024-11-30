@@ -1,8 +1,8 @@
-import { NewsItem } from '@/types/news'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { Button } from './ui/button'
+import { NewsItem } from '@/types/news';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { Button } from './ui/button';
 
 interface NewsCardProps {
   item: NewsItem
@@ -26,7 +26,7 @@ const NewsCard = ({item}: NewsCardProps) => {
            </Link>
          </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsCard
+export default NewsCard;

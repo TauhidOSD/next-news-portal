@@ -1,10 +1,10 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-import bannerImg from "@/assets/banner.jpg"
-import { Button } from './ui/button'
+import bannerImg from "@/assets/banner.jpg";
+import { Button } from './ui/button';
 const Banner = () => {
     return (
-        <section className="bg-gray-100 py-8">
+        <section className="dark:bg-slate-800 dark:text-white bg-gray-100 py-8">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  items-center gap-8 px-4 sm:px-6 lg:px-8 py-5">
                 <div className='w-full'>
                     <Image
@@ -18,7 +18,7 @@ const Banner = () => {
                 {/* content */}
                 <div className=' flex flex-col space-y-4'>
                     <h4 className='text-sm font-medium text-gray-500'>Technology</h4>
-                    <h2 className='text-3xl font-bold text-gray-900'> OpenAI Is Growing Fast and Burning Through Piles of Money</h2>
+                    <h2 className='text-3xl font-bold '> OpenAI Is Growing Fast and Burning Through Piles of Money</h2>
                     <p> OpenAI monthly revenue hit US$300 million in August, up 1,700% since
                         the beginning of 2023, and the company expects about $3.7 billion in
                         annual sales this year, according to financial documents reviewed by
@@ -34,7 +34,7 @@ const Banner = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Banner
+export default Banner;

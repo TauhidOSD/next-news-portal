@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Button } from "./ui/button";
 const MobileMenu = () => {
@@ -8,7 +8,7 @@ const MobileMenu = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const toggleMobileMenu = () => {
       setIsMobileMenuOpen(!isMobileMenuOpen);
-    }
+    };
 
   return (
     <div className="lg:hidden">
@@ -18,7 +18,7 @@ const MobileMenu = () => {
             }
           </Button>
         </div>
-  )
-}
+  );
+};
 
-export default MobileMenu
+export default MobileMenu;

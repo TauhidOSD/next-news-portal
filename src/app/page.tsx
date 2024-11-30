@@ -9,7 +9,7 @@ import { NewsItem } from "@/types/news";
 export default async function Home() {
 
   const data = await fetch(`https://news-api-next-js-kappa.vercel.app/api/news`);
-  const news = await data.json()
+  const news = await data.json();
   console.log(news);
   
 

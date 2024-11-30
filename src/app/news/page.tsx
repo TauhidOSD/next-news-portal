@@ -1,4 +1,4 @@
-import NewsList from "@/components/news/NewsList"
+import NewsList from "@/components/news/NewsList";
 
 const NewsPage = () => {
   return (
@@ -6,7 +6,7 @@ const NewsPage = () => {
       <h2 className="text-2xl font-bold mb-8">Latest News</h2>
       <NewsList/>
       </section>
-  )
-}
+  );
+};
 
-export default NewsPage
+export default NewsPage;

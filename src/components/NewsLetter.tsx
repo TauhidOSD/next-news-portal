@@ -1,6 +1,6 @@
-import React from 'react'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
+import React from 'react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
 
 const NewsLetter = () => {
     return (
@@ -31,7 +31,7 @@ const NewsLetter = () => {
                     </div>
                 </form>
             </div>
-        </section>)
-}
+        </section>);
+};
 
-export default NewsLetter
+export default NewsLetter;
